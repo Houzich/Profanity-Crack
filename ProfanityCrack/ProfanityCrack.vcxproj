@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{24e33aaf-4db5-4705-8a59-705da3bcaebf}</ProjectGuid>
+    <RootNamespace>ProfanityCrack</RootNamespace>
+    <ProjectName>ProfanityCrack</ProjectName>
+  </PropertyGroup>
+  <!-- Workaround for VS Template engine (latest Windows SDK selection) -->
+  <PropertyGroup Condition="'$(WindowsTargetPlatformVersion)'==''">
+    <LatestTargetPlatformVersion>$([Microsoft.Build.Utilities.ToolLocationHelper]::GetLatestSDKTargetPlatformVersion('Windows', '10.0'))</LatestTargetPlatformVersion>
+    <WindowsTargetPlatformVersion Condition="'$(WindowsTargetPlatformVersion)' == ''">10.0</WindowsTargetPlatformVersion>
+    <TargetPlatformVersion>$(WindowsTargetPlatformVersion)</TargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="$(INTELOCLSDKROOT)\BuildCustomizations\IntelOpenCL.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <TargetName>$(ProjectName)_1_1</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <TargetName>$(ProjectName)</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Intel_OpenCL_Build_Rules>
+      <Device>1</Device>
+      <IR>1</IR>
+    </Intel_OpenCL_Build_Rules>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir)Config;$(ProjectDir)Data;$(INTELOCLSDKROOT)include;%(AdditionalIncludeDirectories);$(ProjectDir)CrackPublicKey;$(ProjectDir);$(ProjectDir)ProfanityCPU;$(ProjectDir)ProfanityCPU</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>Win32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions);CL_TARGET_OPENCL_VERSION=220</PreprocessorDefinitions>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <PrecompiledHeader />
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
+      <OpenMPSupport>true</OpenMPSupport>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(INTELOCLSDKROOT)lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>OpenCL.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <PostBuildEvent>
+      <Command>If exist "*.cl" copy "*.cl" "$(OutDir)\"
+If exist "config.cfg" copy "config.cfg" "$(OutDir)\"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Intel_OpenCL_Build_Rules>
+      <Device>1</Device>
+      <IR>1</IR>
+    </Intel_OpenCL_Build_Rules>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir)Config;$(ProjectDir)Data;$(INTELOCLSDKROOT)include;$(ProjectDir);$(ProjectDir)CrackPublicKey;%(AdditionalIncludeDirectories);$(ProjectDir)CrackPublicKey;$(ProjectDir);$(ProjectDir)ProfanityCPU;$(ProjectDir)ProfanityCPU</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>Win32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions);CL_TARGET_OPENCL_VERSION=220</PreprocessorDefinitions>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <PrecompiledHeader />
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
+      <OpenMPSupport>true</OpenMPSupport>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(INTELOCLSDKROOT)lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>OpenCL.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EntryPointSymbol>main</EntryPointSymbol>
+    </Link>
+    <PostBuildEvent>
+      <Command>If exist "*.cl" copy "*.cl" "$(OutDir)\"
+If exist "config.cfg" copy "config.cfg" "$(OutDir)\"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Intel_OpenCL_Build_Rules>
+      <Device>1</Device>
+      <IR>1</IR>
+    </Intel_OpenCL_Build_Rules>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir)Config;$(ProjectDir)Data;$(INTELOCLSDKROOT)include;%(AdditionalIncludeDirectories);$(ProjectDir)CrackPublicKey;$(ProjectDir);$(ProjectDir)ProfanityCPU;$(ProjectDir)ProfanityCPU</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>__x86_64;NDEBUG;_CONSOLE;%(PreprocessorDefinitions);CL_TARGET_OPENCL_VERSION=220</PreprocessorDefinitions>
+      <Optimization>MaxSpeed</Optimization>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <PrecompiledHeader />
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
+      <OpenMPSupport>true</OpenMPSupport>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(INTELOCLSDKROOT)lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>OpenCL.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+    </Link>
+    <PostBuildEvent>
+      <Command>If exist "*.cl" copy "*.cl" "$(OutDir)\"
+If exist "config.cfg" copy "config.cfg" "$(OutDir)\"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Intel_OpenCL_Build_Rules>
+      <Device>1</Device>
+      <IR>1</IR>
+    </Intel_OpenCL_Build_Rules>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir)Config;$(ProjectDir)Data;$(INTELOCLSDKROOT)include;%(AdditionalIncludeDirectories);$(ProjectDir)CrackPublicKey;$(ProjectDir);$(ProjectDir)ProfanityCPU;$(ProjectDir)ProfanityCPU</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>__x86_64;_DEBUG;_CONSOLE;%(PreprocessorDefinitions);CL_TARGET_OPENCL_VERSION=220</PreprocessorDefinitions>
+      <Optimization>Disabled</Optimization>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <PrecompiledHeader />
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
+      <OpenMPSupport>true</OpenMPSupport>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(INTELOCLSDKROOT)lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>OpenCL.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <PostBuildEvent>
+      <Command>If exist "*.cl" copy "*.cl" "$(OutDir)\"
+If exist "config.cfg" copy "config.cfg" "$(OutDir)\"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Config\Config.cpp" />
+    <ClCompile Include="CrackPublicKey\Crack.cpp" />
+    <ClCompile Include="CrackPublicKey\Dispatcher.cpp" />
+    <ClCompile Include="Data\Buffer.cpp" />
+    <ClCompile Include="Data\Find.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="precomp.cpp" />
+    <ClCompile Include="SpeedSample.cpp" />
+    <ClCompile Include="utils.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Intel_OpenCL_Build_Rules Include="crack.cl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CLMemory.hpp" />
+    <ClInclude Include="Config\Config.hpp" />
+    <ClInclude Include="CrackPublicKey\Crack.hpp" />
+    <ClInclude Include="CrackPublicKey\Dispatcher.hpp" />
+    <ClInclude Include="Data\Buffer.h" />
+    <ClInclude Include="Data\Find.h" />
+    <ClInclude Include="defines.h" />
+    <ClInclude Include="lexical_cast.hpp" />
+    <ClInclude Include="precomp.hpp" />
+    <ClInclude Include="SpeedSample.hpp" />
+    <ClInclude Include="types.hpp" />
+    <ClInclude Include="utils.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\README.md" />
+    <None Include="config.cfg" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="$(INTELOCLSDKROOT)\BuildCustomizations\IntelOpenCL.targets" />
+  </ImportGroup>
+</Project>
