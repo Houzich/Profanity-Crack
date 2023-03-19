@@ -315,18 +315,6 @@ mp_word mp_add(mp_number * const r, const mp_number * const a) {
 
 	return c;
 }
-mp_word mp_add_3(mp_number * const r, const mp_number * const a, const mp_number * const b) {
-	mp_word c = 0;
-
-	for (mp_word i = 0; i < MP_WORDS; ++i) {
-		r->d[i] = a->d[i] + b->d[i] + c;
-		c = r->d[i] < (a->d[i] + b->d[i]) ? 1 : (r->d[i] == (a->d[i] + b->d[i]) ? c : 0);
-	}
-
-	return c;
-}
-
-
 
 // Multiprecision addition. Overflow signalled via return value.
 mp_word mp_add_size(mp_number * const r, const uint a) {
@@ -364,20 +352,6 @@ mp_word mp_mod_add(mp_number * const r, const mp_number * const a) {
 	}
 	return c;
 }
-
-
-
-
-mp_word mp_mod_add_3(mp_number * const r, const mp_number * const a, const mp_number * const b) {
-	mp_word c = 0;
-	c = mp_add_3(r, a, b);
-	if (c) {
-		mp_sub_mod(r);
-	}
-	return c;
-}
-
-
 
 // Multiprecision addition of two numbers with one extra word each. Overflow signalled via return value.
 mp_word mp_add_more(mp_number * const r, mp_word * const extraR, const mp_number * const a, const mp_word * const extraA) {
