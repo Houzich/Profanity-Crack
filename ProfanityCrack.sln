@@ -5,6 +5,15 @@ VisualStudioVersion = 16.0.33130.400
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ProfanityCrack", "ProfanityCrack\ProfanityCrack.vcxproj", "{24E33AAF-4DB5-4705-8A59-705DA3BCAEBF}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "exe", "exe", "{B44CF159-CC43-42FE-9394-37D2FD6FE8D7}"
+	ProjectSection(SolutionItems) = preProject
+		exe\config.cfg = exe\config.cfg
+		exe\crack.cl = exe\crack.cl
+		exe\ProfanityCrack.exe = exe\ProfanityCrack.exe
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "image", "image", "{ADB368F1-0F10-4BB9-9FD0-69EE34EB8BF6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64

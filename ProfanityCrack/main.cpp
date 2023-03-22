@@ -52,8 +52,7 @@ int main(int argc, char** argv) {
 
 	}
 	size_t number_device = 0;
-	// address 0x77cc6699448b8c5e9c503e749a16b8374015c976  private_key 0xc8505c6c876399185b499f3c1ae43e5b553496e135dbcc2ca67c4b278cd9bb18
-	std::string pubKeyIn = "7cefe04ddbdb17e3861ec995d515bac16cc2766cca1d66c27acdcee876fb3cd2d811c410835d71c56fab7e492084a3949aa6797aefb38ab4b1ab1dd1b6e15f45";
+	std::string pubKeyIn = "";
 
 	std::wcout << L"Введите номер используемой видеокарты: ";
 	std::cin >> number_device;
