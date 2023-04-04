@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.33130.400
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33502.453
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ProfanityCrack", "ProfanityCrack\ProfanityCrack.vcxproj", "{24E33AAF-4DB5-4705-8A59-705DA3BCAEBF}"
 EndProject
@@ -9,7 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "exe", "exe", "{B44CF159-CC4
 	ProjectSection(SolutionItems) = preProject
 		exe\config.cfg = exe\config.cfg
 		exe\crack.cl = exe\crack.cl
-		exe\ProfanityCrack.exe = exe\ProfanityCrack.exe
+		exe\ProfanityCrackV11.exe = exe\ProfanityCrackV11.exe
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "image", "image", "{ADB368F1-0F10-4BB9-9FD0-69EE34EB8BF6}"

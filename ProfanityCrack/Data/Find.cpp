@@ -188,7 +188,7 @@
 			//std::cout << "OUT.SIZE = " << out.size() << std::endl;
 			for (int x = 0; x < out.size(); x++)
 			{
-				std::cout << "\n!!!FIND 8 BYTES!!!\n";
+				std::cout << "\n!!!FOUND 8 BYTES!!!\n";
 				std::string filename = getFileName(config.folder_keys, out[x].num_table, "bin");
 				size_t filesize = getBinaryFileSize(filename);
 				if (filesize % LINE_LEN != 0) {
@@ -200,19 +200,19 @@
 				if (comp_points(&out[x].key, &out[x].key_from_file) == 1) {
 					getFromBinaryFile(filename, &out[x].seed, 4, out[x].num_key_in_table * LINE_LEN + 64);
 					printf("SEED: %.8x\n", out[x].seed);
-					std::cout << "!!!FIND!!!\n!!!FIND!!!\n!!!FIND!!!\n!!!FIND!!!\n";
+					std::cout << "!!!FOUND!!!\n!!!FOUND!!!\n!!!FOUND!!!\n!!!FOUND!!!\n";
 					private_key privateKeyInTable;
 					genPrivateKeys(&privateKeyInTable, 1, out[x].seed);
-					std::cout << "INFO: "<< std::endl;
-					printPrivateKey("TABLE PRIVATE KEY: ", &privateKeyInTable);
-					printPoint("TABLE PUBLIC KEY: ", &out[x].key);
-					std::cout << "NUM PUBLIC KEY: " << out[x].num_key_in_byffer << std::endl;
 					std::cout << "ROUND: " << round << std::endl;
-					std::cout << "***************************************************************************\n\n";
+					printPoint("PUBLIC KEY: ", &out[x].key);
+					//std::cout << "INFO: "<< std::endl;
+					//printPrivateKey("TABLE PRIVATE KEY: ", &privateKeyInTable);
+					//std::cout << "NUM PUBLIC KEY: " << out[x].num_key_in_byffer << std::endl;
+					//std::cout << "***************************************************************************\n\n";
 					private_key privateKey = calcKeyFromResult(privateKeyInTable, round - 2, out[x].num_key_in_byffer);
-					printPrivateKey("FIND PRIVATE KEY: ", &privateKey);
-					printPrivateKey("FIND PRIVATE KEY: ", &privateKey);
-					printPrivateKey("FIND PRIVATE KEY: ", &privateKey);
+					printPrivateKey("FOUND PRIVATE KEY: ", &privateKey);
+					printPrivateKey("FOUND PRIVATE KEY: ", &privateKey);
+					printPrivateKey("FOUND PRIVATE KEY: ", &privateKey);
 					std::cout << "***************************************************************************\n\n";
 					return 1;
 				}
@@ -222,3 +222,4 @@
 	}
 
 
+	

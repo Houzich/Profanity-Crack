@@ -11,7 +11,7 @@
 #include <array>
  // Suppress a compiler warning about undefined CL_TARGET_OPENCL_VERSION
  // Khronos ICD supports only latest OpenCL version
- //#define CL_TARGET_OPENCL_VERSION 220
+ // #define CL_TARGET_OPENCL_VERSION 220
 
 #include "CL\cl.h"
 #include "CL\cl_ext.h"
