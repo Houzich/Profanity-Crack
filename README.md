@@ -28,4 +28,4 @@ FOUND PRIVATE KEY: C8505C6C876399185B499F3C1AE43E5B553496E135DBCC2CA67C4B278CD9B
 ## Файл ProfanityCrackV11.exe находится в папке exe
 
 
-### ОБСУЖДЕНИЕ КОДА: https://t.me/BRUTE_FORCE_CRYPTO_WALLET
+### ОБСУЖДЕНИЕ КОДА: https://t.me/brute_force_gpu
