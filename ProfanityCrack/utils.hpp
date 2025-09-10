@@ -103,3 +103,4 @@ void readFromStream(std::ifstream& in, void* data, size_t size);
 
 #endif /* HPP_UTILS */
 
+

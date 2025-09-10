@@ -1,4 +1,4 @@
-﻿// TODO: Add OpenCL kernel code here.
+// TODO: Add OpenCL kernel code here.
 #define printf(...)
 
 
@@ -660,6 +660,7 @@ __kernel void crack(__global point * const extensionPublicKey, __global point* m
 	}
 
 }
+
 
 
 

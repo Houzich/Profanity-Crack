@@ -1,4 +1,4 @@
-ï»¿/*****************************************************************************
+/*****************************************************************************
  *****************************************************************************/
 
 #include <stdio.h>
@@ -38,7 +38,7 @@ int main(int argc, char** argv) {
 	std::vector<cl_device_id> vFoundDevices = getAllDevices();
 	cl_device_id Device = NULL;
 
-	std::wcout << L"ÐÐ°Ð¹Ð´ÐµÐ½Ð½Ñ‹Ðµ Ð²Ð¸Ð´ÐµÐ¾ÐºÐ°Ñ€Ñ‚Ñ‹:" << std::endl;
+	std::wcout << L"Íàéäåííûå âèäåîêàðòû:" << std::endl;
 	for (size_t i = 0; i < vFoundDevices.size(); ++i) {
 
 		if (vFoundDevices[i] == NULL) continue;
@@ -54,19 +54,19 @@ int main(int argc, char** argv) {
 	size_t number_device = 0;
 	std::string pubKeyIn = "";
 
-	std::wcout << L"Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¾Ð¼ÐµÑ€ Ð¸ÑÐ¿Ð¾Ð»ÑŒÐ·ÑƒÐµÐ¼Ð¾Ð¹ Ð²Ð¸Ð´ÐµÐ¾ÐºÐ°Ñ€Ñ‚Ñ‹: ";
+	std::wcout << L"Ââåäèòå íîìåð èñïîëüçóåìîé âèäåîêàðòû: ";
 	std::cin >> number_device;
 	if (number_device >= vFoundDevices.size()) {
-		std::wcout << L"ERROR: Ð½ÐµÐ²ÐµÑ€Ð½Ñ‹Ð¹ Ð½Ð¾Ð¼ÐµÑ€ ÑƒÑÑ‚Ñ€Ð¾Ð¹ÑÑ‚Ð²Ð°: " << "  [" << number_device << "]\n";
-		std::wcout << L"Ð’ÑÐµÐ³Ð¾ Ð½Ð°Ð¹Ð´ÐµÐ½Ð½Ñ‹Ñ… ÑƒÑÑ‚Ñ€Ð¾Ð¹ÑÑ‚Ð²: " << vFoundDevices.size() << "\n";
+		std::wcout << L"ERROR: íåâåðíûé íîìåð óñòðîéñòâà: " << "  [" << number_device << "]\n";
+		std::wcout << L"Âñåãî íàéäåííûõ óñòðîéñòâ: " << vFoundDevices.size() << "\n";
 		goto exit;
 	}
 
 
-	std::wcout << L"Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¸ÑÐºÐ¾Ð¼Ñ‹Ð¹ Ð¿ÑƒÐ±Ð»Ð¸Ñ‡Ð½Ñ‹Ð¹ ÐºÐ»ÑŽÑ‡: ";
+	std::wcout << L"Ââåäèòå èñêîìûé ïóáëè÷íûé êëþ÷: ";
 	std::cin >> pubKeyIn;
 	if (pubKeyIn.size() != 128) {
-		std::wcout << L"ERROR: Ð½ÐµÐ²ÐµÑ€Ð½Ð°Ñ Ð´Ð»Ð¸Ð½Ð° Ð¿ÑƒÐ±Ð»Ð¸Ñ‡Ð½Ð¾Ð³Ð¾ ÐºÐ»ÑŽÑ‡Ð°: " << "  [" << pubKeyIn.size() << "]\n";
+		std::wcout << L"ERROR: íåâåðíàÿ äëèíà ïóáëè÷íîãî êëþ÷à: " << "  [" << pubKeyIn.size() << "]\n";
 		goto exit;
 	}
 
@@ -104,4 +104,5 @@ exit:
 	}
 		
 }
+
 
