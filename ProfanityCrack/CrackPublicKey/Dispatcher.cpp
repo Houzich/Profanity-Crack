@@ -1,4 +1,4 @@
-ï»¿
+
 
 // Includes
 #include <stdexcept>
@@ -150,8 +150,8 @@ void Dispatcher::run() {
 }
 
 void Dispatcher::init() {
-	std::wcout << L"Ð˜Ð½Ð¸Ñ†Ð¸Ð°Ð»Ð¸Ð·Ð°Ñ†Ð¸Ñ..." << std::endl;
-	std::wcout << L"ÐœÐ¾Ð¶ÐµÑ‚ Ð·Ð°Ð½ÑÑ‚ÑŒ Ð½ÐµÑÐºÐ¾Ð»ÑŒÐºÐ¾ Ð¼Ð¸Ð½ÑƒÑ‚..." << std::endl;
+	std::wcout << L"Èíèöèàëèçàöèÿ..." << std::endl;
+	std::wcout << L"Ìîæåò çàíÿòü íåñêîëüêî ìèíóò..." << std::endl;
 	m_sizeInitTotal = m_size;
 	m_sizeInitDone = 0;
 
@@ -348,3 +348,4 @@ std::string Dispatcher::formatSpeed(double f) {
 	ss << std::fixed << std::setprecision(5) << (double)f << " " << S[index] << "H/s";
 	return ss.str();
 }
+

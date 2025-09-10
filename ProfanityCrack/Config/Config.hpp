@@ -24,3 +24,4 @@ public:
 
 int parse_gonfig(ConfigClass* config, std::string path);
 #endif /* HPP_CONFIG */
+
