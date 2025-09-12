@@ -8,3 +8,4 @@ int crack_public_key(cl_device_id* device, HostBuffersClass& Data, point public_
 
 #endif /* HPP_CRACK_PUBLIC_KEY */
 
+

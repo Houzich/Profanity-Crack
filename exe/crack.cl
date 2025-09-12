@@ -666,3 +666,4 @@ __kernel void crack(__global point * const extensionPublicKey, __global point* m
 
 
 
+

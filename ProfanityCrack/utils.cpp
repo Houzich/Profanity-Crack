@@ -575,3 +575,4 @@ std::string TranslateOpenCLError(cl_int errorCode)
 		return "UNKNOWN ERROR CODE";
 	}
 }
+

@@ -129,3 +129,4 @@ private: /* Instance variables */
 
 #endif /* HPP_CRACK_PUB_KEY */
 
+

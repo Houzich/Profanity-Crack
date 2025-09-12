@@ -245,3 +245,4 @@ If exist "config.cfg" copy "config.cfg" "$(OutDir)\"</Command>
     <Import Project="$(INTELOCLSDKROOT)\BuildCustomizations\IntelOpenCL.targets" />
   </ImportGroup>
 </Project>
+
